@@ -1,4 +1,11 @@
 declare module 'nodegit' {
+  export namespace Enums {
+    enum DIRECTION {
+      FETCH = 0, 
+      PUSH = 1
+    }
+  }
+
   /**
    * Represents the signature of a Git user.
    */
@@ -91,6 +98,18 @@ declare module 'nodegit' {
      * @param options configurations to the push.
      */
     push(refSpecs: string[], options: PushOptions): Promise<number>;
+
+    /**
+     * Configures the default callbacks for the remote.
+     * @param cbs the callbacks to add.
+     */
+    setCallbacks(cbs: RemoteCallbacks): void;
+
+    /**
+     * Connects to the remote.
+     * @param dir which way to connect
+     */
+    connect(dir: Enums.DIRECTION):
   }
 
   /**
