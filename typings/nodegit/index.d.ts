@@ -62,6 +62,11 @@ declare module 'nodegit' {
      * Generates SSH credentials for the given account.
      */
     static sshKeyFromAgent(name: string): Cred;
+
+    /**
+     * Generates a key from username and password
+     */
+    static userpassPlaintextNew(username: string, pass: string): Cred;
   }
 
   /**
@@ -109,7 +114,7 @@ declare module 'nodegit' {
      * Connects to the remote.
      * @param dir which way to connect
      */
-    connect(dir: Enums.DIRECTION):
+    connect(dir: Enums.DIRECTION): Promise<Remote>;
   }
 
   /**
