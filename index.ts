@@ -58,7 +58,6 @@ app.get("/commit", (req, res) => {
               callbacks: {
                 certificateCheck: () => 1,
                 credentials: (url: string, userName: string) => {
-                  // This is currently not working but works with plaintext pass
                   return git.Cred.sshKeyFromAgent(userName);
                 }
               }
