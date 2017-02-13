@@ -77,12 +77,11 @@ declare module 'nodegit' {
    */
   export class Remote {
       /**
-       * Produces a remote, given a repository, name and repository url.
+       * Finds an exisiting remote.
        * @param repo the target repository
        * @param name the name of the Remote
-       * @param url the url to the repository
        */
-    static create(repo: Repository, name: string, url: string): Promise<Remote>;
+    static lookup(repo: Repository, name: string, callback: Function): Promise<Remote>;
 
     /**
      * Performs a Git push.
