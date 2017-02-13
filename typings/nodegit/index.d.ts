@@ -19,6 +19,14 @@ declare module 'nodegit' {
     static open(path: string): Promise<Repository>;
 
     /**
+     * Finds an exisiting remote.
+     * @param name the name of the Remote
+     * @param callback unknown purpose
+     */
+    getRemote(name: string, callback: Function): Promise<Remote>;
+
+
+    /**
      * Returns a commit OID (or string) by reference.
      * @param ref the reference to the commit.
      */
@@ -76,13 +84,6 @@ declare module 'nodegit' {
    * A remote in Git.
    */
   export class Remote {
-      /**
-       * Finds an exisiting remote.
-       * @param repo the target repository
-       * @param name the name of the Remote
-       */
-    static lookup(repo: Repository, name: string, callback: Function): Promise<Remote>;
-
     /**
      * Performs a Git push.
      * Returns an error code or 0.
