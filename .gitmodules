@@ -1,3 +1,0 @@
-[submodule "typings/nodegit-typescript-definition"]
-	path = typings/nodegit-typescript-definition
-	url = https://github.com/RabbitLabs/nodegit-typescript-definition
